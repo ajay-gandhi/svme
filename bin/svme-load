@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+/**
+ * Module for loading content
+ */
+
+// NPM modules
+var program = require('commander');
+
+// Local modules
+var app = require('../lib/app.js');
+
+program
+  .arguments('[which]')
+  .option('-p, --parseable', 'return parseable data (like ls) for "all"')
+  .on('--help', function () {
+    console.log('  Usage:');
+    console.log('');
+    console.log('    [which] can be "all", a positive integer, or excluded');
+    console.log('');
+    console.log('    all        Display all saved content');
+    console.log('    (number)   Display content saved (number) times ago');
+    console.log('    (none)     Display last saved content');
+    console.log('');
+    console.log('  Examples:');
+    console.log('');
+    console.log('    $ svme load         # load latest');
+    console.log('    $ svme load 1       # alias for above');
+    console.log('    $ svme load 3       # load 3rd last');
+    console.log('    $ svme load "all"   # display all');
+    console.log('');
+  })
+  .parse(process.argv);
+
+app.load(program.args[0], program.parseable);

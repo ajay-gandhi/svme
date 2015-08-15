@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program
+  // .version(require('package.json').version)
+  .version('0.0.1')
+  .command('save [content]', 'content to save')
+  .command('load [which]',   'content to load')
+  .parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+    program.help();
+}

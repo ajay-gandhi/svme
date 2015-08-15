@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+/**
+ * Module for saving content
+ */
+
+// NPM modules
+var program = require('commander');
+
+// Local modules
+var app = require('../lib/app.js');
+
+program
+  .arguments('[content]')
+  .on('--help', function () {
+    console.log('  Example:');
+    console.log('');
+    console.log('    $ svme save "hello"   # stores "hello"');
+    console.log('');
+  })
+  .parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+    program.help();
+}
+
+var content = program.args.join(' ');
+
+app.save(content);
