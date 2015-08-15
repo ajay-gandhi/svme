@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+/**
+ * Module for clearing content
+ */
+
+// NPM modules
+var program = require('commander');
+
+// Local modules
+var app = require('../lib/app.js');
+
+program.parse(process.argv);
+
+app.clear();

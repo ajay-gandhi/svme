@@ -28,13 +28,23 @@ $ svme load
 
 Run `svme help load` for more details on loading data.
 
-### Piping
+#### Piping
 
 You can even pipe data to `svme`:
 
 ```bash
 $ ls | svme save
 ```
+
+#### Clearing
+
+Clear the stashed values:
+
+```bash
+$ svme clear
+```
+
+You'll have to confirm that you want to clear it.
 
 ## How
 

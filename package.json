@@ -1,6 +1,6 @@
 {
   "name": "svme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Store and load temporary data with your terminal",
   "main": "bin/svme",
   "bin": {
