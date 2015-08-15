@@ -3,8 +3,7 @@
 var program = require('commander');
 
 program
-  // .version(require('package.json').version)
-  .version('0.0.1')
+  .version(require('package.json').version)
   .command('save [content]', 'content to save')
   .command('load [which]',   'content to load')
   .parse(process.argv);
