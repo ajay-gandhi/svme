@@ -12,15 +12,16 @@ var app = require('../lib/app.js');
 
 program
   .arguments('[which]')
-  .option('-p, --parseable', 'return parseable data (like ls) for "all"')
+  .option('-p, --parseable', 'return newline delimited data')
   .on('--help', function () {
     console.log('  Usage:');
     console.log('');
     console.log('    [which] can be "all", a positive integer, or excluded');
     console.log('');
-    console.log('    all        Display all saved content');
-    console.log('    (number)   Display content saved (number) times ago');
-    console.log('    (none)     Display last saved content');
+    console.log('    all           Display all saved content');
+    console.log('    (number)      Display content saved (number) times ago');
+    console.log('    first..last   Display from first to last, inclusive');
+    console.log('    (none)        Display last saved content');
     console.log('');
     console.log('  Examples:');
     console.log('');
@@ -28,6 +29,9 @@ program
     console.log('    $ svme load 1       # alias for above');
     console.log('    $ svme load 3       # load 3rd last');
     console.log('    $ svme load "all"   # display all');
+    console.log('');
+    console.log('    $ svme load ..4     # display last 4');
+    console.log('    $ svme load 3..5    # display 3rd through 5th');
     console.log('');
   })
   .parse(process.argv);
