@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Store and load temporary data with your terminal",
   "main": "bin/svme",
+  "bin": {
+    "svme": "bin/svme"
+  },
   "dependencies": {
     "chalk": "^1.1.0",
     "commander": "^2.8.1",
@@ -15,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "repl"
+    "url": "git@github.com:ajay-gandhi/svme.git"
   },
   "keywords": [
     "save",
