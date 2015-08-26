@@ -36,4 +36,4 @@ program
   })
   .parse(process.argv);
 
-app.load(program.args[0], program.parseable);
+app.load((program.args.length) ? program.args[0] : 1, program.parseable);
